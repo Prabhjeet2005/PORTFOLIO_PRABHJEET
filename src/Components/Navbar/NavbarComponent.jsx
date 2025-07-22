@@ -13,15 +13,12 @@ const NavbarComponent = () => {
 			<section className="display-flex-row align-items-center navbar-container">
 				{showFullNavbar && (
 					<>
-						<section className="navbar-item">Home</section>
-						<section className="navbar-item">Education</section>
-						<section className="navbar-item">Skills</section>
-						<section className="navbar-item">Education</section>
-						<section className="navbar-item">Experience</section>
-						<section className="navbar-item">Projects</section>
-						<section className="navbar-item">Certifications</section>
-						<section className="navbar-item">Achievements</section>
-						<section className="navbar-item">Contact</section>
+						<a href="#aboutme"  className="navbar-item">About</a>
+						<a href="#education" className="navbar-item">Education</a>
+						<a href="#skills" className="navbar-item">Skills</a>
+						<a href="#experience" className="navbar-item">Experience</a>
+						<a href="#projects" className="navbar-item">Projects</a>
+						<a href="#certifications" className="navbar-item">Certifications</a>
 					</>
 				)}
 				{!showFullNavbar ? (

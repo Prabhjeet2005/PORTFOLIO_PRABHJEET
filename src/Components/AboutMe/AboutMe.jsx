@@ -1,8 +1,10 @@
-import React from 'react'
+import React from "react";
 
 const AboutMe = () => {
-  return (
-		<section className="display-flex-row align-item-center home-container-outer">
+	return (
+		<section
+			id="aboutme"
+			className="display-flex-row align-item-center home-container-outer">
 			<section className="profile-pic-container">
 				{" "}
 				<span>
@@ -30,11 +32,79 @@ const AboutMe = () => {
 							contribute, learn, and grow in a challenging environment.
 						</p>
 					</section>
-					<section className="coding-profiles">Coding Profiles</section>
+					<section className="coding-profiles">
+						{" "}
+						<a
+							href="mailto:prabhjeetsandhu010@gmail.com"
+							target="_blank"
+							rel="noreferrer">
+							{" "}
+							<img
+								className="img-college github"
+								src="./images/gmail.svg"
+								alt=""
+							/>{" "}
+						</a>{" "}
+						<a
+							href="https://www.linkedin.com/in/prabhjeetsandhu/"
+							target="_blank"
+							rel="noreferrer">
+							{" "}
+							<img
+								className="img-college github"
+								src="./images/linkedin-svgrepo-com.svg"
+								alt=""
+							/>{" "}
+						</a>{" "}
+						<a
+							href="https://github.com/Prabhjeet2005/"
+							target="_blank"
+							rel="noreferrer">
+							{" "}
+							<img
+								className="img-college github"
+								src="./images/github-inverted-svgrepo-com.svg"
+								alt=""
+							/>{" "}
+						</a>{" "}
+						<a
+							href="https://leetcode.com/u/Prabhjeetsandhu010/"
+							target="_blank"
+							rel="noreferrer">
+							{" "}
+							<img
+								className="img-college github"
+								src="./images/leetcode.svg"
+								alt=""
+							/>{" "}
+						</a>{" "}
+						<a
+							href="https://www.naukri.com/code360/profile/prabhjeetsandhu"
+							target="_blank"
+							rel="noreferrer">
+							{" "}
+							<img
+								className="img-college github"
+								src="./images/codingNinja.jpeg"
+								alt=""
+							/>{" "}
+						</a>{" "}
+						<a
+							href="https://www.geeksforgeeks.org/user/prabhjeetsandhu/"
+							target="_blank"
+							rel="noreferrer">
+							{" "}
+							<img
+								className="img-college github"
+								src="./images/geeksforgeeks-svgrepo-com.svg"
+								alt=""
+							/>{" "}
+						</a>{" "}
+					</section>
 				</section>
 			</section>
 		</section>
 	);
-}
+};
 
-export default AboutMe
+export default AboutMe;

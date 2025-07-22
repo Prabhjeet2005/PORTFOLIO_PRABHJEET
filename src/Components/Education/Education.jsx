@@ -3,11 +3,16 @@ import { Mortarboard } from "react-bootstrap-icons";
 
 const Education = () => {
 	return (
-		<section className="edu-conatiner">
+		<section id="education" className="edu-conatiner">
 			<section className="about-title img-center">
 				Education <Mortarboard />
 			</section>
-			<section className="edu-content">
+			<section className="edu-content display-flex-row">
+				<img
+					src="./images/GGSIU_logo.svg.png"
+					className="img-college"
+					alt="logo"
+				/>
 				<section className="edu-title">
 					Guru Gobind Singh Indraprastha University
 				</section>

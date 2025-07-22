@@ -1,0 +1,269 @@
+.profile-pic {
+	height: 90vh;
+	position: relative;
+}
+.profile-pic-container {
+	position: relative;
+}
+.profile-below-text {
+	position: absolute;
+	top: 70px;
+	text-align: center;
+	width: 100%;
+	font-weight: 700;
+	font-size: xxx-large;
+	z-index: 5;
+}
+.home-container-outer {
+	display: flex;
+	flex-direction: column !important;
+	gap: 20%;
+	padding: 20px;
+	align-items: center;
+	position: relative;
+	padding-top: 126px;
+}
+a {
+	text-decoration: none;
+}
+
+.homepage-different-outer-container {
+	display: flex;
+	flex-direction: column;
+	gap: 20vh;
+}
+
+.about-title {
+	font-size: xxx-large;
+	font-weight: 600;
+	display: flex;
+	justify-content: center;
+}
+.about-content {
+	font-size: large;
+	line-height: 1.5;
+	display: flex;
+	justify-content: center;
+	text-align: justify;
+}
+
+.coding-profiles {
+	display: flex;
+	justify-content: space-between;
+}
+.img-center {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.edu-conatiner {
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 4vh;
+	align-items: center;
+}
+.edu-content {
+	font-size: large;
+	line-height: 1.5;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border: 1px solid;
+	padding: 30px;
+	border-radius: 8px;
+	width: fit-content;
+	gap: 12px;
+	background-color: black;
+}
+.edu-desc {
+	display: flex;
+	justify-content: space-between;
+	line-height: 2;
+}
+
+.edu-title {
+	font-size: x-large;
+	font-weight: 600;
+	color: yellow;
+}
+
+.edu-subtitle {
+	font-size: medium;
+	font-weight: 200;
+	font-size: medium;
+}
+
+.edu-desc {
+}
+
+.img-college {
+	height: 50px;
+	width: 60px;
+}
+.github {
+	height: 50px;
+	width: 50px;
+	background-color: white;
+	border-radius: 10%;
+}
+
+.round-img {
+	border-radius: 50%;
+}
+
+.skills-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 24px;
+	justify-content: space-evenly;
+}
+
+.skills-individual {
+	border: 1px solid;
+	padding: 30px 10px;
+	border-radius: 8px;
+	font-weight: 600;
+	min-width: 104px;
+	min-height: 90px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	background-color: #ffeb3b33;
+}
+
+.skill-img {
+	height: 80px;
+}
+
+.project-card-container {
+	border: 1px solid;
+	border-radius: 8px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	min-width: 260px;
+}
+
+.project-card-img {
+	height: 200px;
+	background-size: contain;
+}
+
+.project-card-title {
+	font-size: xx-large;
+	font-weight: 700;
+	display: flex;
+	justify-content: center;
+}
+
+.project-card-footer {
+	display: flex;
+	justify-content: space-around;
+}
+
+.project-card-link {
+	padding: 4px;
+	border-radius: 4px;
+	border: 1px solid yellow;
+	color: yellow;
+	transition: transform 0.3 ease;
+	min-width: 50px;
+	display: flex;
+	justify-content: center;
+}
+.project-card-link:hover {
+	color: black;
+	background-color: yellow;
+	transform: scale(1.1);
+	cursor: pointer;
+}
+
+.product-multiple-card-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 28px;
+	justify-content: space-around;
+}
+
+.certification-multiple-card-container {
+	width: 80%;
+	border: 1px solid;
+	border-radius: 8px;
+	padding: 10px;
+}
+
+.certification-card-container {
+	display: flex;
+	gap: 24px;
+	flex-direction: column;
+	align-items: center;
+}
+
+.certification-image {
+	height: 80px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.certification-title-view-container {
+	width: 100%;
+	padding: 4px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	gap: 8px;
+}
+
+.certification-card-title {
+	font-size: x-large;
+	font-weight: 800;
+}
+
+.certification-card-view {
+	color: yellow;
+	border-radius: 4px;
+	border: 1px solid yellow;
+	width: fit-content;
+	padding: 4px;
+	transition: transform 0.3s ease;
+}
+.certification-card-view:hover {
+	color: black;
+	background-color: yellow;
+	transform: scale(1.1);
+	cursor: pointer;
+}
+
+@media (min-width: 1028px) {
+	.home-container-outer {
+		flex-direction: row !important;
+		padding: 0 150px;
+		gap: 10%;
+	}
+	.profile-pic {
+		height: 90vh;
+	}
+	.edu-conatiner {
+	}
+	.certification-multiple-card-container {
+		width: 50%;
+		flex-direction: column;
+	}
+	.certification-title-view-container {
+		align-items: flex-start;
+	}
+	.certification-card-container {
+		flex-direction: row;
+	}
+}
+
+.homepage-intro {
+	margin-top: 60px;
+}
