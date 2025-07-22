@@ -3,14 +3,16 @@
 	justify-content: space-between;
 	padding: 10px 20px;
 	border-bottom: 1px solid;
-	color: yellow;
+	color: white;
 	display: flex !important;
 	flex-direction: column;
 	background-color: black;
 	z-index: 1000;
 	height: fit-content;
 	border-bottom: 1px solid;
-
+	position: fixed;
+	width: -webkit-fill-available;
+	top: 0;
 }
 
 .width-100 {
@@ -42,9 +44,10 @@
 	border-radius: 4px;
 	font-weight: 700;
 
-	width: 100%;
+	width: 80%;
 	display: flex;
 	justify-content: center;
+	color: white;
 }
 
 .navbar-item:hover {
@@ -62,7 +65,7 @@
 	.hamburger {
 		display: none;
 	}
-  .width-100 {
-	flex-direction: row;
-}
+	.width-100 {
+		flex-direction: row;
+	}
 }
