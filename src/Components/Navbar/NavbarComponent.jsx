@@ -14,9 +14,6 @@ const NavbarComponent = () => {
 				{showFullNavbar && (
 					<>
 						<section className="navbar-item">Home</section>
-						<section className="navbar-item">
-							<span>About Me</span>
-						</section>
 						<section className="navbar-item">Education</section>
 						<section className="navbar-item">Skills</section>
 						<section className="navbar-item">Education</section>
