@@ -16,16 +16,16 @@ const AboutMe = () => {
 				<section>
 					<section className="about-content">
 						<p>
-							I am pursuing a B.Tech in Computer Science & Engineering at Guru
-							Gobind Singh Indraprastha University, graduating with a 9.5/10
+							I am pursuing B.Tech in Computer Science & Engineering at Guru
+							Gobind Singh Indraprastha University, with a 9.5/10
 							GPA.
 							<br />
-							My core expertise spans the MERN stack and fundamental CS concepts
+							My core expertise encompasses the MERN stack and fundamental CS concepts
 							DBMS, OOP, DSA, and Computer Networks. <br />I am also passionate
 							about AI/ML and Data Science, and continually expanding my skills
 							in these areas.
 							<br />
-							To date, I have earned certifications in IBM Data Science,
+							Till date, I have earned certifications in IBM Data Science,
 							GeeksforGeeks Full Stack Development, and Meta DBMS, and solved
 							over 350 DSA problems across LeetCode, GFG, and Coding Ninjas.{" "}
 							<br />I am seeking software engineering internships where I can
