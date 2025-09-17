@@ -97,7 +97,7 @@ a {
 	border: 1px solid;
 	padding: 30px;
 	border-radius: 8px;
-	width: fit-content;
+	width: 50em;
 	gap: 12px;
 	background-color: black;
 }
