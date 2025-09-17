@@ -4,12 +4,6 @@ import CertificationCard from "./CertificationCard";
 const Certifications = () => {
 	const allCertifications = [
 		{
-			image: "./images/geeksforgeeks-svgrepo-com.svg",
-			title: "Full Stack Development",
-			source:
-				"https://drive.google.com/file/d/1qwH4QI73Kku8xr3kRSjn1-Cwi6rHNjmh/view?usp=sharing",
-		},
-		{
 			image: "./images/ibm-logo-svgrepo-com.svg",
 			title: "Data Science",
 			source:

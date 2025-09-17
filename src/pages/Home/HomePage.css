@@ -31,6 +31,7 @@ a {
 	display: flex;
 	flex-direction: column;
 	gap: 20vh;
+	margin-top: 5em;
 }
 
 .about-title {
@@ -38,6 +39,7 @@ a {
 	font-weight: 600;
 	display: flex;
 	justify-content: center;
+	color: yellow;
 }
 .about-content {
 	font-size: large;

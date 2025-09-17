@@ -12,7 +12,7 @@ const AboutMe = () => {
 				</span>
 			</section>
 			<section>
-				<section className="about-title">About Me</section>
+				<section className="about-title">Prabhjeet Singh Sandhu</section>
 				<section>
 					<section className="about-content">
 						<p>

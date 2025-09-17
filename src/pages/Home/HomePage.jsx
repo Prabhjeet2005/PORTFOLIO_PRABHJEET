@@ -9,14 +9,14 @@ import Certifications from "../../Components/Certifications/Certifications";
 
 const HomePage = () => {
 	return (
-    <>
-    <section className="profile-below-text">Prabhjeet Singh Sandhu</section>
+		<>
 			<section className="homepage-different-outer-container">
+				{/* <section className="profile-below-text">Prabhjeet Singh Sandhu</section> */}
 				<AboutMe />
-				<Education />
 				<Skills />
-				<Experience />
 				<Projects />
+				<Experience />
+				<Education />
 				<Certifications />
 			</section>
 		</>

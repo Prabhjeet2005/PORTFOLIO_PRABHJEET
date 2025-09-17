@@ -11,6 +11,7 @@ const Skills = () => {
 		{ imageStored: "./images/java.svg", value: "Java" },
 		{ imageStored: "./images/sql1.svg", value: "SQL" },
 		{ imageStored: "./images/mysql-logo-svgrepo-com.svg", value: "MySQL" },
+		{ imageStored: "./images/postgresql-icon.svg", value: "PostgreSQL" },
 		{ imageStored: "./images/html-5-svgrepo-com.svg", value: "HTML" },
 		{ imageStored: "./images/css-3-svgrepo-com.svg", value: "CSS" },
 		{ imageStored: "./images/mongodb.svg", value: "MongoDB" },

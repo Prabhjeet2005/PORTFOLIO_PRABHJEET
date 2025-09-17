@@ -14,10 +14,10 @@ const NavbarComponent = () => {
 				{showFullNavbar && (
 					<>
 						<a href="#aboutme"  className="navbar-item">About</a>
-						<a href="#education" className="navbar-item">Education</a>
 						<a href="#skills" className="navbar-item">Skills</a>
-						<a href="#experience" className="navbar-item">Experience</a>
 						<a href="#projects" className="navbar-item">Projects</a>
+						<a href="#experience" className="navbar-item">Experience</a>
+						<a href="#education" className="navbar-item">Education</a>
 						<a href="#certifications" className="navbar-item">Certifications</a>
 					</>
 				)}
