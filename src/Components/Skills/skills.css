@@ -1,0 +1,23 @@
+/* Styling for the container to center the button */
+.load-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem; /* Adds some space above the button */
+}
+
+/* Styling for the button itself */
+.load-more-btn {
+  padding: 10px 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: black;
+  background-color: yellow; /* A nice blue, change as needed */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.load-more-btn:hover {
+  transform: scale(1.1); /* Slight lift effect on hover */
+}

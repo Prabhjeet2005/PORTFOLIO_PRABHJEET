@@ -1,6 +1,7 @@
-import React from "react";
-import { CodeSlash, Mortarboard } from "react-bootstrap-icons";
+import React, { useState } from "react";
+import { CodeSlash } from "react-bootstrap-icons";
 import SkillsCard from "./SkillsCard";
+import "./skills.css";
 
 const Skills = () => {
 	const allSkills = [
@@ -50,13 +51,33 @@ const Skills = () => {
 		},
 		{ imageStored: "./images/seaborn-1.svg", value: "Seaborn" },
 	];
+
+	// --- 1. DEFINE CONSTANTS ---
+	// The number of skills to show initially on mobile devices.
+	const INITIAL_MOBILE_COUNT = 5;
+
+	// --- 2. INITIALIZE STATE ---
+	// Determine the initial number of skills to show based on screen width.
+	// If the window width is less than 768px, show the mobile count, otherwise show all.
+	const [visibleSkillsCount, setVisibleSkillsCount] = useState(
+		window.innerWidth < 769 ? 4 : 12
+	);
+
+	// --- 3. CREATE HANDLER FUNCTION ---
+	// This function will update the state to show all skills.
+	const handleLoadMore = () => {
+		setVisibleSkillsCount(allSkills.length);
+	};
+
 	return (
 		<section id="skills" className="edu-conatiner">
 			<section className="about-title img-center">
 				Skills <CodeSlash />
 			</section>
 			<section className="skills-container">
-				{allSkills.map((item) => (
+				{/* --- 4. RENDER A SUBSET OF SKILLS --- */}
+				{/* Use .slice() to only map over the number of skills we want to display */}
+				{allSkills.slice(0, visibleSkillsCount).map((item) => (
 					<SkillsCard
 						key={item.value}
 						className="skills-individual"
@@ -65,6 +86,16 @@ const Skills = () => {
 					/>
 				))}
 			</section>
+
+			{/* --- 5. CONDITIONALLY RENDER THE BUTTON --- */}
+			{/* The button only appears if the number of visible skills is less than the total */}
+			{visibleSkillsCount < allSkills.length && (
+				<div className="load-more-container">
+					<button onClick={handleLoadMore} className="load-more-btn">
+						Load More
+					</button>
+				</div>
+			)}
 		</section>
 	);
 };

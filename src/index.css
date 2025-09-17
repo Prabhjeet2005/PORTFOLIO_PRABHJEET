@@ -13,3 +13,18 @@ code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
 		monospace;
 }
+
+html {
+	scrollbar-color: yellow #a1e0e000;
+	scrollbar-width: auto; /* or 'thin' */
+}
+html::-webkit-scrollbar-thumb:hover {
+	background: yellow;
+}
+/* --- WebKit scrollbar styling for Chrome, Safari, etc. --- */
+html::-webkit-scrollbar {
+	height: 6px;
+}
+html::-webkit-scrollbar-thumb:hover {
+	background: yellow;
+}

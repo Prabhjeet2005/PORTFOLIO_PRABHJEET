@@ -8,7 +8,7 @@ const AboutMe = () => {
 			<section className="profile-pic-container">
 				{" "}
 				<span>
-					<img className="profile-pic" src="./images/profile.png" alt="Image" />{" "}
+					<img className="profile-pic" src="./images/profile.jpg" alt="Image" />{" "}
 				</span>
 			</section>
 			<section>

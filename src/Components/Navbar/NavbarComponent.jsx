@@ -3,7 +3,7 @@ import { List,XLg } from "react-bootstrap-icons";
 
 import "./NavbarComponent.css";
 const NavbarComponent = () => {
-	const [showFullNavbar, setShowFullNavbar] = useState(true);
+	const [showFullNavbar, setShowFullNavbar] = useState(false);
 
   const handleShowFullNavBarClick = ()=>{
     setShowFullNavbar(!showFullNavbar)

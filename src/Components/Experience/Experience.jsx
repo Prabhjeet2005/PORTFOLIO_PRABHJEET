@@ -90,8 +90,7 @@ const Experience = () => {
 				<section className="edu-title">RaiseDigital</section>
 				<section>Web Developer Intern</section>
 				<section className="edu-subtitle">
-					Redesigned &amp; optimised responsive web pages using ReactJs,
-					<br /> leading to 15% increase in user engagement and a 20% reduction
+					Redesigned &amp; optimised responsive web pages using ReactJs, leading to 15% increase in user engagement and a 20% reduction
 					in page load times.
 					<br />
 					Utilized RESTful APIs with Node.js &amp; Express.js to enable seemless
