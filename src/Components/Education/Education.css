@@ -1,0 +1,139 @@
+.education-container {
+  position: relative;
+  width: 100%;
+  min-height: 80vh; /* Give it enough height for the 3D effect */
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* 3D Background Layer */
+.education-canvas-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none; /* Allows interaction with the card */
+}
+
+.education-title {
+  position: relative;
+  z-index: 2;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+/* The Glass Card */
+.education-card {
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 3rem;
+  max-width: 800px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 50px 0 rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.edu-logo-container {
+  width: 120px;
+  height: 120px;
+  background: #fff;
+  border-radius: 50%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
+.edu-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.edu-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.edu-school {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.edu-degree {
+  font-size: 1.2rem;
+  color: #00CED1; /* Cyan accent */
+  font-weight: 600;
+  margin: 0;
+}
+
+.edu-meta {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.edu-grade {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+  color: #FFD700; /* Gold for GPA */
+  display: flex;
+  align-items: center;
+}
+
+.edu-year {
+  display: flex;
+  align-items: center;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .education-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .edu-meta {
+    justify-content: center;
+  }
+  
+  .edu-school {
+    font-size: 1.4rem;
+  }
+}

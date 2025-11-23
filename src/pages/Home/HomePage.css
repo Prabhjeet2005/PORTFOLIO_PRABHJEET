@@ -157,7 +157,8 @@ a {
 	justify-content: center;
 	align-items: center;
 	gap: 10px;
-	background-color: #ffeb3b33;
+	background-color: #ffffff1d;
+	backdrop-filter: blur(7px);
 }
 
 .skill-img {
@@ -291,4 +292,84 @@ a {
 
 .homepage-intro {
 	margin-top: 60px;
+}
+
+/* --- PROJECT SECTION STYLES --- */
+
+/* Grid Layout: Ensures all cards share the same row height */
+.product-multiple-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 5rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* The Card: Glassmorphism + Flexbox for structure */
+.project-card-container {
+  background: transparent;
+  backdrop-filter: blur(0.5px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+  
+  /* Critical for equal height */
+  display: flex;
+  flex-direction: column;
+  height: 100%; 
+  min-height: 350px; /* Minimum height to keep uniformity */
+  
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+/* The Image: Fixed height + object-fit to prevent stretching */
+.project-card-img {
+  width: 100%;
+  height: 200px; /* FIXED HEIGHT */
+  object-fit: cover; /* CROPS the image to fit the box perfectly */
+  object-position: top; /* Focus on the top of the website screenshot */
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: transparent; /* Loading placeholder color */
+}
+
+/* Title Styling */
+.project-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 1rem 0 0.5rem 0;
+  text-align: center;
+}
+
+/* Footer: Always pushed to the bottom */
+.project-card-footer {
+  margin-top: auto; /* This pushes buttons to bottom */
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+/* Button Styling */
+.project-card-link {
+  padding: 8px 20px;
+  border-radius: 8px;
+  border: 1px solid yellow;
+  color: yellow;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.project-card-link:hover {
+  background-color: yellow;
+  color: black;
+  box-shadow: 0 0 15px rgba(255, 255, 0, 0.4);
+  transform: translateY(-2px);
 }

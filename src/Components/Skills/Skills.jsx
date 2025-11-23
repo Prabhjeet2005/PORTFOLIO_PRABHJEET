@@ -1,8 +1,125 @@
-import React, { useState } from "react";
+import React, { useMemo, useRef, useState } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { Html, OrbitControls } from "@react-three/drei";
 import { CodeSlash } from "react-bootstrap-icons";
-import SkillsCard from "./SkillsCard";
+import * as THREE from "three";
 import "./skills.css";
 
+// --- 1. The Individual Skill Item (Floating in 3D) ---
+const SkillIcon = ({ position, image, label }) => {
+	const ref = useRef();
+	const [hovered, setHovered] = useState(false);
+
+	// Optional: Make icons always face the camera
+	useFrame(({ camera }) => {
+		if (ref.current) {
+			ref.current.quaternion.copy(camera.quaternion);
+		}
+	});
+
+	return (
+		<group position={position} ref={ref}>
+			<Html center distanceFactor={12} zIndexRange={[100, 0]}>
+				<div
+					onMouseEnter={() => setHovered(true)}
+					onMouseLeave={() => setHovered(false)}
+					style={{
+						display: "flex",
+						flexDirection: "column",
+						alignItems: "center",
+						cursor: "pointer",
+						transition: "all 0.3s ease",
+						transform: hovered ? "scale(1.2)" : "scale(1)",
+						opacity: hovered ? 1 : 0.8, // Fade items slightly when not hovered
+						userSelect: "none",
+						WebkitUserSelect: "none", // Safari/Chrome
+						MozUserSelect: "none", // Firefox
+						msUserSelect: "none", // IE/Edge
+					}}>
+					<div
+						style={{
+							width: "60px",
+							height: "60px",
+							background: "rgba(255, 255, 255, 0.1)",
+							backdropFilter: "blur(4px)",
+							borderRadius: "50%",
+							display: "flex",
+							justifyContent: "center",
+							alignItems: "center",
+							border: hovered
+								? "1px solid yellow"
+								: "1px solid rgba(255,255,255,0.2)",
+							boxShadow: hovered ? "0 0 15px yellow" : "none",
+						}}>
+						<img
+							src={image}
+							alt={label}
+							style={{
+								width: "35px",
+								height: "35px",
+								objectFit: "contain",
+							}}
+						/>
+					</div>
+					<span
+						style={{
+							marginTop: "8px",
+							color: "white",
+							fontSize: "12px",
+							fontWeight: "600",
+							textShadow: "0 2px 4px black",
+							background: "rgba(0,0,0,0.6)",
+							padding: "2px 6px",
+							borderRadius: "4px",
+							opacity: hovered ? 1 : 0.5, // Only show text on hover to keep it clean
+							transition: "opacity 0.3s",
+							pointerEvents: "none",
+							whiteSpace: "nowrap",
+						}}>
+						{label}
+					</span>
+				</div>
+			</Html>
+		</group>
+	);
+};
+
+// --- 2. The Sphere Logic ---
+const SkillsCloud = ({ skills }) => {
+	// Fibonacci Sphere Algorithm to distribute points evenly
+	const points = useMemo(() => {
+		const temp = [];
+		const count = skills.length;
+		const radius = 4; // Radius of the sphere
+
+		for (let i = 0; i < count; i++) {
+			const phi = Math.acos(-1 + (2 * i) / count);
+			const theta = Math.sqrt(count * Math.PI) * phi;
+
+			const x = radius * Math.cos(theta) * Math.sin(phi);
+			const y = radius * Math.sin(theta) * Math.sin(phi);
+			const z = radius * Math.cos(phi);
+
+			temp.push([x, y, z]);
+		}
+		return temp;
+	}, [skills]);
+
+	return (
+		<group rotation={[0, 0, 0]}>
+			{points.map((pos, index) => (
+				<SkillIcon
+					key={index}
+					position={pos}
+					image={skills[index].imageStored}
+					label={skills[index].value}
+				/>
+			))}
+		</group>
+	);
+};
+
+// --- 3. Main Component ---
 const Skills = () => {
 	const allSkills = [
 		{ imageStored: "./images/cpp.svg", value: "C++" },
@@ -31,7 +148,10 @@ const Skills = () => {
 		{ imageStored: "./images/flask.svg", value: "Flask" },
 		{ imageStored: "./images/dsa.svg", value: "DSA" },
 		{ imageStored: "./images/oops.svg", value: "OOPS" },
-		{ imageStored: "./images/problemsolving.svg", value: "Problem-Solving" },
+		{
+			imageStored: "./images/problemsolving.svg",
+			value: "Problem-Solving",
+		},
 		{ imageStored: "./images/debug-svgrepo-com.svg", value: "Debugging" },
 		{
 			imageStored: "./images/machine-learning-01-svgrepo-com.svg",
@@ -45,57 +165,58 @@ const Skills = () => {
 			imageStored: "./images/stacked-bar-chart-svgrepo-com.svg",
 			value: "Data Visualization",
 		},
-		{
-			imageStored: "./images/Matplotlib.svg",
-			value: "Matplotlib",
-		},
+		{ imageStored: "./images/Matplotlib.svg", value: "Matplotlib" },
 		{ imageStored: "./images/seaborn-1.svg", value: "Seaborn" },
 	];
 
-	// --- 1. DEFINE CONSTANTS ---
-	// The number of skills to show initially on mobile devices.
-	const INITIAL_MOBILE_COUNT = 5;
-
-	// --- 2. INITIALIZE STATE ---
-	// Determine the initial number of skills to show based on screen width.
-	// If the window width is less than 768px, show the mobile count, otherwise show all.
-	const [visibleSkillsCount, setVisibleSkillsCount] = useState(
-		window.innerWidth < 769 ? 4 : 12
-	);
-
-	// --- 3. CREATE HANDLER FUNCTION ---
-	// This function will update the state to show all skills.
-	const handleLoadMore = () => {
-		setVisibleSkillsCount(allSkills.length);
-	};
-
 	return (
-		<section id="skills" className="edu-conatiner">
-			<section className="about-title img-center">
-				Skills <CodeSlash />
-			</section>
-			<section className="skills-container">
-				{/* --- 4. RENDER A SUBSET OF SKILLS --- */}
-				{/* Use .slice() to only map over the number of skills we want to display */}
-				{allSkills.slice(0, visibleSkillsCount).map((item) => (
-					<SkillsCard
-						key={item.value}
-						className="skills-individual"
-						imageStored={item.imageStored}
-						value={item.value}
-					/>
-				))}
-			</section>
+		<section
+			id="skills"
+			className="edu-conatiner"
+			style={{
+				position: "relative",
+				width: "100%",
+				height: "100vh", // Gives the 3D scene room to breathe
+				display: "flex",
+				flexDirection: "column",
+				alignItems: "center",
+				justifyContent: "center",
+				overflow: "hidden",
+			}}>
+			<div
+				className="about-title img-center"
+				style={{ zIndex: 10, marginBottom: "1rem" }}>
+				Skills{" "}
+				<CodeSlash style={{ marginLeft: "10px", color: "yellow" }} />
+			</div>
 
-			{/* --- 5. CONDITIONALLY RENDER THE BUTTON --- */}
-			{/* The button only appears if the number of visible skills is less than the total */}
-			{visibleSkillsCount < allSkills.length && (
-				<div className="load-more-container">
-					<button onClick={handleLoadMore} className="load-more-btn">
-						Load More
-					</button>
-				</div>
-			)}
+			{/* 3D Scene Container */}
+			<div style={{ width: "100%", height: "80%", cursor: "grab" }}>
+				<Canvas camera={{ position: [0, 0, 11], fov: 50 }}>
+					<ambientLight intensity={0.5} />
+					<pointLight position={[10, 10, 10]} />
+
+					<SkillsCloud skills={allSkills} />
+
+					{/* Controls: Auto-rotate adds the 'alive' feeling */}
+					<OrbitControls
+						enableZoom={false}
+						autoRotate
+						autoRotateSpeed={1.5}
+						enablePan={false}
+					/>
+				</Canvas>
+			</div>
+
+			<div
+				style={{
+					position: "absolute",
+					bottom: "20px",
+					color: "rgba(255,255,255,0.3)",
+					fontSize: "0.8rem",
+				}}>
+				Interactive 3D Sphere - Drag to rotate
+			</div>
 		</section>
 	);
 };

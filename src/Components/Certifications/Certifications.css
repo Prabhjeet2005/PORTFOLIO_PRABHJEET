@@ -1,0 +1,105 @@
+.certifications-container {
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.certifications-grid {
+  display: grid;
+  /* Responsive grid: columns will be at least 300px wide */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 5rem;
+  width: 90%;
+  margin-top: 2rem;
+}
+
+/* Card Styling */
+.certification-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 100%; /* Ensure equal height in grid row */
+}
+
+.cert-image-wrapper {
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  border-radius: 50%;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.certification-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cert-content {
+  flex: 1; /* Push content to fill space */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+  align-items: center;
+}
+
+.certification-card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.certification-card-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background: transparent;
+  border: 1px solid yellow;
+  color: yellow;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  margin-top: auto; /* Push button to bottom */
+}
+
+.certification-card-view:hover {
+  background: yellow;
+  color: black;
+  box-shadow: 0 0 15px rgba(255, 255, 0, 0.4);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .certifications-container {
+    padding: 3rem 1rem;
+  }
+  
+  .certifications-grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 1.5rem;
+  }
+}

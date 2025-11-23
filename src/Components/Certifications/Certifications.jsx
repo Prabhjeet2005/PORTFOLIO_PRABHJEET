@@ -1,5 +1,8 @@
 import React from "react";
 import CertificationCard from "./CertificationCard";
+import { Award } from "react-bootstrap-icons";
+import { motion } from "framer-motion";
+import "./Certifications.css"; // Create this CSS file
 
 const Certifications = () => {
 	const allCertifications = [
@@ -64,26 +67,29 @@ const Certifications = () => {
 				"https://drive.google.com/file/d/1klGAEvJr9nIIDhGf2Q4pEherf5ZwpsXl/view?usp=sharing",
 		},
 	];
+
 	return (
-		<section id="certifications" className="edu-conatiner">
-			<section className="about-title img-center">
+		<section id="certifications" className="certifications-container">
+			<motion.div
+				className="about-title img-center"
+				initial={{ opacity: 0, y: -20 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true }}
+				transition={{ duration: 0.6 }}>
 				Certifications{" "}
-				<img
-					className="img-college"
-					src="./images/certificate-diploma-degree-svgrepo-com.svg"
-					alt="certifyLogo"
-				/>{" "}
-			</section>
-			{allCertifications.map((item) => (
-				<section className="certification-multiple-card-container">
+				<Award style={{ marginLeft: "10px", color: "yellow" }} />
+			</motion.div>
+
+			<div className="certifications-grid">
+				{allCertifications.map((item, index) => (
 					<CertificationCard
-						key={item.source}
+						key={index} // Using index as key if source isn't unique, but prefer unique ID
 						image={item.image}
 						title={item.title}
 						source={item.source}
 					/>
-				</section>
-			))}
+				))}
+			</div>
 		</section>
 	);
 };

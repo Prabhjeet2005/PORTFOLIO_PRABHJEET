@@ -1,0 +1,223 @@
+.experience-section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 6rem 1rem;
+  background-color: transparent;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.experience-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 5rem;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: white;
+  margin: 0;
+}
+
+.highlight {
+  background: linear-gradient(90deg, #ffd700, #ff8c00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.title-icon {
+  font-size: 2.5rem;
+  color: #ffd700;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
+
+/* --- TIMELINE WRAPPER --- */
+.timeline-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  position: relative;
+}
+
+/* --- CENTRAL LINE --- */
+.line-container {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(-50%);
+  border-radius: 2px;
+  z-index: 0;
+}
+
+.line-progress {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #ffd700, #00ced1, #32cd32);
+  transform-origin: top;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+/* --- ROWS --- */
+.timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem; /* Vertical spacing between cards */
+}
+
+.timeline-row {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+/* Alignments */
+.left-row {
+  flex-direction: row;
+}
+
+.right-row {
+  flex-direction: row-reverse;
+}
+
+.timeline-content,
+.timeline-spacer {
+  width: 45%; /* Cards take 45%, Spacer takes 45% */
+}
+
+.timeline-node {
+  width: 10%; /* Center area */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* The Dot Style */
+.node-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid white; /* Fallback color */
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px black;
+}
+
+.node-center {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 768px) {
+  .line-container {
+    left: 20px; /* Move line to left side */
+  }
+
+  .timeline-row, .left-row, .right-row {
+    flex-direction: row; /* Always align left-to-right */
+    gap: 1rem;
+  }
+
+  .timeline-node {
+    width: 40px; /* Fixed width for node area */
+    justify-content: flex-start;
+    padding-left: 10px;
+  }
+  
+  .timeline-spacer {
+    display: none; /* Remove spacer on mobile */
+  }
+
+  .timeline-content {
+    width: calc(100% - 50px); /* Take remaining width */
+  }
+}
+
+/* --- GLASS CARD STYLING --- */
+.glass-card {
+  background: rgba(30, 30, 30, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  text-align: left; /* FORCE LEFT ALIGNMENT FOR TEXT */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle Glow Gradient behind card */
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at top right, rgba(255,255,255,0.05), transparent 40%);
+  pointer-events: none;
+}
+
+.glass-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.glass-logo {
+  width: 48px;
+  height: 48px;
+  background: white;
+  border-radius: 10px;
+  padding: 4px;
+  margin-right: 1rem;
+  object-fit: contain;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.glass-header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.glass-role {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.glass-company {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 2px 0 0 0;
+}
+
+.glass-date {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 1.2rem;
+  font-family: monospace;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  background: rgba(255,255,255,0.05);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.glass-body {
+  font-size: 0.95rem;
+  color: #d0d0d0;
+  line-height: 1.7;
+  font-weight: 300;
+}

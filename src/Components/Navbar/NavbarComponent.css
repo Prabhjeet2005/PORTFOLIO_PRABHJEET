@@ -1,71 +1,100 @@
+/* Container with Glassmorphism */
 .navbar-container {
-	height: fit-content;
-	justify-content: space-between;
-	padding: 10px 20px;
-	border-bottom: 1px solid;
-	color: white;
-	display: flex !important;
-	flex-direction: column;
-	background-color: black;
-	z-index: 1000;
-	height: fit-content;
-	border-bottom: 1px solid;
-	position: fixed;
-	width: -webkit-fill-available;
-	top: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  
+  /* Glass Effect - Dark background to contrast with white text */
+  background: rgba(0, 0, 0, 0.7); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
-.width-100 {
-	width: 80%;
+/* Header for Mobile (Icon) */
+.navbar-header {
+  display: flex;
+  justify-content: flex-end; /* Puts hamburger to the right */
+  width: 95%;
+  padding: 5px 0;
 }
 
-.dont-show {
-	display: none;
+.hamburger-icon {
+  font-size: 2rem;
+  color: #ffffff !important; /* FORCES WHITE COLOR */
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  transition: color 0.3s ease;
 }
 
-.hamburger {
-	font-size: xx-large;
-	border: 0.5px solid;
-	padding: 4px;
-	border-radius: 4px;
-	margin-top: 10px;
-	cursor: pointer;
-	transition: transform 0.3s ease;
+.hamburger-icon:hover {
+  color: yellow !important;
 }
 
-.hamburger:hover {
-	transform: scale(1.1);
-	color: black;
-	background-color: yellow;
+/* Links Container */
+.navbar-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  overflow: hidden; /* Essential for height animation */
 }
 
+/* Individual Link Items */
 .navbar-item {
-	padding: 8px;
-	border-radius: 4px;
-	font-weight: 700;
-
-	width: 80%;
-	display: flex;
-	justify-content: center;
-	color: white;
+  text-decoration: none;
+  color: #ffffff !important; /* FORCES WHITE COLOR */
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  position: relative; /* For absolute underline */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
 }
 
-.navbar-item:hover {
-	background-color: yellow;
-	color: black;
-	transform: scale(1.05);
-	cursor: pointer;
+/* Remove blue color on visited links if any */
+.navbar-item:visited {
+  color: #ffffff;
 }
 
+/* Yellow Underline Effect */
+.underline {
+  height: 2px;
+  background-color: yellow;
+  margin-top: 4px;
+  border-radius: 2px;
+}
+
+/* --- Desktop View --- */
 @media (min-width: 1028px) {
-	.navbar-container {
-		flex-direction: row !important;
-		justify-content: center;
-	}
-	.hamburger {
-		display: none;
-	}
-	.width-100 {
-		flex-direction: row;
-	}
+  .navbar-container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+  }
+
+  .navbar-header {
+    display: none; /* Hide hamburger on desktop */
+  }
+
+  .navbar-links {
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    height: auto !important; /* Override framer animation height on desktop */
+    opacity: 1 !important;
+  }
 }
