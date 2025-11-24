@@ -43,7 +43,7 @@ const Education = () => {
 						Bachelor of Technology in Computer Science Engineering
 					</p>
 
-					<div className="edu-meta">
+					<div className="edu-meta  flex flex-col items-center sm:flex-row">
 						<span className="edu-grade flex items-center">
 							<Award style={{ marginRight: "8px", marginBottom: "2px" }} />
 							GPA: 9.5 / 10
@@ -76,7 +76,7 @@ const Education = () => {
 					<h3 className="edu-school">Jaspal Kaur Public School</h3>
 					<p className="edu-degree">Non Medical</p>
 
-					<div className="edu-meta">
+					<div className="edu-meta flex flex-col items-center sm:flex-row ">
 						<span className="edu-grade flex items-center">
 							<Award style={{ marginRight: "8px", marginBottom: "2px" }} />
 							12<sup>th</sup>: 93.8%
