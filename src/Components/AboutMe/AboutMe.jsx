@@ -103,7 +103,7 @@ const AboutMe = () => {
 							target="_blank"
 							rel="noreferrer">
 							<img
-								className="img   -college github"
+								className="img-college github"
 								src="./images/gmail.svg"
 								alt="Gmail"
 							/>
@@ -113,7 +113,7 @@ const AboutMe = () => {
 							target="_blank"
 							rel="noreferrer">
 							<img
-								className="img   -college github"
+								className="img-college github"
 								src="./images/linkedin-svgrepo-com.svg"
 								alt="LinkedIn"
 							/>
@@ -123,7 +123,7 @@ const AboutMe = () => {
 							target="_blank"
 							rel="noreferrer">
 							<img
-								className="img   -college github"
+								className="img-college github"
 								src="./images/github-inverted-svgrepo-com.svg"
 								alt="GitHub"
 							/>
@@ -133,7 +133,7 @@ const AboutMe = () => {
 							target="_blank"
 							rel="noreferrer">
 							<img
-								className="img   -college github"
+								className="img-college github"
 								src="./images/leetcode.svg"
 								alt="LeetCode"
 							/>
@@ -143,7 +143,7 @@ const AboutMe = () => {
 							target="_blank"
 							rel="noreferrer">
 							<img
-								className="img   -college github"
+								className="img-college github"
 								src="./images/codingNinja.jpeg"
 								alt="Coding Ninjas"
 							/>
@@ -153,7 +153,7 @@ const AboutMe = () => {
 							target="_blank"
 							rel="noreferrer">
 							<img
-								className="img   -college github"
+								className="img-college github"
 								src="./images/geeksforgeeks-svgrepo-com.svg"
 								alt="GeeksForGeeks"
 							/>

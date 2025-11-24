@@ -71,7 +71,7 @@ const Certifications = () => {
 	return (
 		<section id="certifications" className="certifications-container">
 			<motion.div
-				className="about-title img   -center"
+				className="about-title img-center"
 				initial={{ opacity: 0, y: -20 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true }}
