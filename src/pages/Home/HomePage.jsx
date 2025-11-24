@@ -23,11 +23,11 @@ const HomePage = () => {
 				</RevealOnScroll>
 
 				<RevealOnScroll width="100%">
-					<Projects />
-				</RevealOnScroll>
-
-				<RevealOnScroll width="100%">
 					<Experience />
+				</RevealOnScroll>
+				
+				<RevealOnScroll width="100%">
+					<Projects />
 				</RevealOnScroll>
 
 				<RevealOnScroll width="100%">
