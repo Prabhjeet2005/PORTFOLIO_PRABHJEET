@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import ProjectCard from "./ProjectCard";
 import { motion } from "framer-motion";
+import { CodeSquare, ChevronDown } from "react-bootstrap-icons";
 
 const Projects = () => {
+	// State to track how many projects to show
+	const [visibleCount, setVisibleCount] = useState(2);
+
 	const projects = [
 		{
 			image: "./images/fullstack_pern.png",
@@ -50,7 +54,12 @@ const Projects = () => {
 		},
 	];
 
-	// Staggered Animation for the Grid
+	const handleLoadMore = () => {
+		// Show 3 more projects (or however many you prefer)
+		setVisibleCount((prev) => projects.length);
+	};
+
+	// Staggered Animation for the Grid Entrance
 	const containerVariants = {
 		hidden: { opacity: 0 },
 		visible: {
@@ -61,12 +70,13 @@ const Projects = () => {
 		},
 	};
 
+	// Individual Card Entrance Animation
 	const itemVariants = {
-		hidden: { y: 30, opacity: 0 },
+		hidden: { y: 50, opacity: 0 },
 		visible: {
 			y: 0,
 			opacity: 1,
-			transition: { type: "spring", stiffness: 120 },
+			transition: { type: "spring", stiffness: 100, damping: 12 },
 		},
 	};
 
@@ -74,38 +84,44 @@ const Projects = () => {
 		<section
 			id="projects"
 			className="edu-conatiner"
-			style={{ padding: "4rem 0", overflow: "hidden" }}>
-			<motion.section
-				className="about-title img-center"
+			style={{ padding: "4rem 0", overflow: "visible" }}>
+			<motion.div
+				className="about-title img   -center"
 				initial={{ opacity: 0, y: -20 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.6 }}
 				viewport={{ once: true }}
-				style={{ marginBottom: "3rem" }}>
+				style={{
+					marginBottom: "4rem",
+					justifyContent: "center",
+					display: "flex",
+					alignItems: "center",
+				}}>
 				Projects{" "}
-				<motion.img
-					className="img-college"
-					src="./images/project.svg"
-					alt=""
-					animate={{ rotate: [0, 15, -15, 0] }}
-					transition={{
-						duration: 2,
-						repeat: Infinity,
-						repeatType: "reverse",
-						ease: "easeInOut",
-					}}
-					style={{ marginLeft: "10px" }}
+				<CodeSquare
+					style={{ marginLeft: "15px", color: "#FFD700" }}
+					size={30}
 				/>
-			</motion.section>
+			</motion.div>
 
 			<motion.div
 				className="product-multiple-card-container"
 				variants={containerVariants}
-				initial="hidden"
 				whileInView="visible"
-				viewport={{ once: true, margin: "-50px" }}>
-				{projects.map((item) => (
-					<motion.div key={item.heading} variants={itemVariants}>
+				viewport={{ once: true, margin: "-50px" }}
+				style={{
+					display: "grid",
+					gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+					gap: "3rem",
+					width: "90%",
+					margin: "0 auto",
+				}}>
+				{/* Slice the array based on visibleCount */}
+				{projects.slice(0, visibleCount).map((item) => (
+					<motion.div
+						key={item.heading}
+						variants={itemVariants}
+						style={{ perspective: "1000px" }}>
 						<ProjectCard
 							image={item.image}
 							heading={item.heading}
@@ -115,6 +131,39 @@ const Projects = () => {
 					</motion.div>
 				))}
 			</motion.div>
+
+			{/* Load More Button Section */}
+			{visibleCount < projects.length && (
+				<motion.div
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					transition={{ delay: 0.5 }}
+					style={{
+						display: "flex",
+						justifyContent: "center",
+						marginTop: "3rem",
+					}}>
+					<motion.button
+						onClick={handleLoadMore}
+						whileHover={{ scale: 1.05 }}
+						whileTap={{ scale: 0.95 }}
+						style={{
+							padding: "0.8rem 2rem",
+							fontSize: "1.1rem",
+							borderRadius: "50px",
+							border: "2px solid #FFD700",
+							background: "transparent",
+							color: "#FFD700", // Matches your CodeSquare color
+							cursor: "pointer",
+							display: "flex",
+							alignItems: "center",
+							gap: "10px",
+							fontWeight: "bold",
+						}}>
+						Load More <ChevronDown />
+					</motion.button>
+				</motion.div>
+			)}
 		</section>
 	);
 };

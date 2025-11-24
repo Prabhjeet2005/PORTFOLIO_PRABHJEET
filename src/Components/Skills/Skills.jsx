@@ -188,7 +188,7 @@ const Skills = () => {
 				overflow: "hidden",
 			}}>
 			<div
-				className="about-title img-center"
+				className="about-title img   -center"
 				style={{ zIndex: 10, marginBottom: "1rem" }}>
 				Skills{" "}
 				<CodeSlash style={{ marginLeft: "10px", color: "yellow" }} />

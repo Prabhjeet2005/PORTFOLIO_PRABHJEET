@@ -8,7 +8,7 @@ const CertificationCard = ({ image, title, source }) => {
 			className="certification-card"
 			whileHover={{
 				y: -5,
-				backgroundColor: "rgba(255, 255, 255, 0.08)",
+				backgroundColor: "transparent",
 				borderColor: "rgba(255, 255, 255, 0.3)",
 				boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)",
 			}}
@@ -17,12 +17,7 @@ const CertificationCard = ({ image, title, source }) => {
 			viewport={{ once: true }}
 			transition={{ duration: 0.3 }}>
 			<div className="cert-image-wrapper">
-				<img
-					className="certification-image"
-					src={image}
-					alt={title}
-					loading="lazy"
-				/>
+				<img className="certification-image" src={image} alt={title} />
 			</div>
 
 			<div className="cert-content">

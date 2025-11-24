@@ -7,6 +7,7 @@ import App from "./App";
 import { createBrowserRouter, Router, RouterProvider } from "react-router-dom";
 import { routes } from "./routes";
 import "./index.css"
+import { HelmetProvider } from "react-helmet-async";
 
 const router = createBrowserRouter([
 	{
@@ -18,7 +19,8 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-	<RouterProvider router={router}>
-		<App />
-	</RouterProvider>
+	<HelmetProvider>
+		{/* 2. RouterProvider goes INSIDE */}
+		<RouterProvider router={router} />
+	</HelmetProvider>
 );

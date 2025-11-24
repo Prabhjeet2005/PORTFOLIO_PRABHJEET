@@ -36,6 +36,7 @@
 
 /* The Glass Card */
 .education-card {
+  margin-top: 2em;
   position: relative;
   z-index: 2;
   backdrop-filter: blur(1px);

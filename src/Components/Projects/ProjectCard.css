@@ -1,0 +1,113 @@
+/* 3D Card Container */
+.project-3d-card {
+  position: relative;
+  height: 320px;
+  width: 100%;
+  background-color: #1a1a1a;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  transition: box-shadow 0.3s ease;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  overflow: hidden; /* Keeps content inside the border radius */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Hover Glow Effect */
+.project-3d-card:hover {
+  box-shadow: 0 20px 50px -10px rgba(255, 215, 0, 0.3); /* Yellow Glow */
+  border-color: rgba(255, 215, 0, 0.4);
+}
+
+/* The Image Background */
+.project-3d-img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  transition: transform 0.4s ease;
+  filter: brightness(0.8) grayscale(0.3); /* Slightly dim initially */
+}
+
+.project-3d-card:hover .project-3d-img {
+  filter: brightness(1) grayscale(0); /* Pop color on hover */
+}
+
+/* Dark Gradient Overlay for text readability */
+.project-3d-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%);
+  border-radius: 20px;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.project-3d-card:hover .project-3d-overlay {
+  opacity: 0.9;
+}
+
+/* Content Layer */
+.project-3d-content {
+  position: relative;
+  z-index: 10;
+  transform-style: preserve-3d;
+}
+
+/* Title Styling */
+.project-3d-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: white;
+  margin: 0 0 1rem 0;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+  transform: translateZ(20px); /* Pops out */
+}
+
+/* Links Container */
+.project-3d-links {
+  display: flex;
+  gap: 12px;
+  transform: translateZ(30px); /* Pops out more than title */
+}
+
+/* Icon Buttons */
+.project-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.project-icon-btn:hover {
+  background: #FFD700;
+  color: black;
+  transform: scale(1.1);
+  border-color: #FFD700;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .project-3d-card {
+    height: 280px;
+  }
+  
+  .project-3d-title {
+    font-size: 1.5rem;
+  }
+}
