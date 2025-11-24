@@ -2,7 +2,6 @@ import React, { useMemo, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Html, OrbitControls } from "@react-three/drei";
 import { CodeSlash } from "react-bootstrap-icons";
-import * as THREE from "three";
 import "./skills.css";
 
 // --- 1. The Individual Skill Item (Floating in 3D) ---
