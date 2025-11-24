@@ -31,7 +31,7 @@
 }
 @media (min-width: 565px) {
 	.profile-pic {
-		height: 28em;
+		height: 25em;
 	}
 
 	.profile-below-text {
@@ -41,7 +41,7 @@
 }
 @media (min-width: 769px) {
 	.profile-pic {
-		height: 38em;
+		height: 28em;
 	}
 	.about-title {
 		padding: 0 1em;
@@ -56,7 +56,6 @@
 	padding: 20px;
 	align-items: center;
 	position: relative;
-	padding-top: 126px;
 }
 a {
 	text-decoration: none;
@@ -272,6 +271,7 @@ a {
 		flex-direction: row !important;
 		padding: 0 150px;
 		gap: 10%;
+		padding-top: 126px;
 	}
 	/* .profile-pic {
 		height: 90vh;

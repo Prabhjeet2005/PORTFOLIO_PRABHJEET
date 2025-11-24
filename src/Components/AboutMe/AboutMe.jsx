@@ -10,13 +10,13 @@ const AboutMe = () => {
 		<section
 			id="aboutme"
 			className="display-flex-row align-item-center home-container-outer">
-			<section className="profile-pic-container">
+			<section className="profile-pic-container shrink-0">
 				<motion.div
 					initial={{ opacity: 0, scale: 0.5 }}
 					animate={{ opacity: 1, scale: 1 }}
 					transition={{ duration: 0.8, ease: "easeOut" }}>
 					<motion.img
-						className="profile-pic"
+						className="profile-pic w-full object-cover"
 						src="./images/profile.jpg"
 						alt="Prabhjeet Singh Sandhu"
 						animate={{ y: [0, -15, 0] }}
@@ -33,7 +33,7 @@ const AboutMe = () => {
 				</motion.div>
 			</section>
 
-			<section>
+			<section className="w-full ">
 				{/* Wrap Title in InView to control typing */}
 				<InView
 					as="section"
