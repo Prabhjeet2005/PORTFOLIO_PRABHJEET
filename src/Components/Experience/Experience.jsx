@@ -21,6 +21,16 @@ const Experience = () => {
 
 	const experiences = [
 		{
+			logo: "./images/delhi-police.png",
+			company: "Delhi Police",
+			role: "Technical Intern",
+			color: "red",
+			duration: "Jan 2026 - Feb 2026",
+			description: `◦ Engineered a secure Dark Web intelligence-gathering tool utilizing Node.js and Python, deploying 15 concurrent worker threads to scrape 800+ targeted illicit links simultaneously. 
+<br/>◦ Optimized encrypted web scraping pipelines under strict cybersecurity protocols, reducing data extraction time by 98% (from 6 hours to under 15 minutes) while maintaining zero-trust data integrity. 
+<br>◦ Deployed the tool into the department's active production environment, directly assisting officials in real-world cybercrime investigations. `,
+		},
+		{
 			logo: "./images/Tech_Mahindra-Logo.wine.svg",
 			company: "Tech Mahindra",
 			role: "Software Engineer Intern",

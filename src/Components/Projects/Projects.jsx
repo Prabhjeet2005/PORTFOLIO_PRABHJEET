@@ -1,13 +1,23 @@
 import React, { useState } from "react";
 import ProjectCard from "./ProjectCard";
 import { motion } from "framer-motion";
-import { CodeSquare, ChevronDown, ExclamationCircle } from "react-bootstrap-icons";
+import {
+	CodeSquare,
+	ChevronDown,
+	ExclamationCircle,
+} from "react-bootstrap-icons";
 
 const Projects = () => {
 	// State to track how many projects to show
 	const [visibleCount, setVisibleCount] = useState(2);
 
 	const projects = [
+		{
+			heading: "Ai Dual Device Proctor",
+			image: "./images/prep-master-ai-client.vercel.app_.png",
+			live: "https://prep-master-ai-client.vercel.app/",
+			github: "https://github.com/Prabhjeet2005/PrepMasterAi",
+		},
 		{
 			image: "./images/fullstack_pern.png",
 			heading: "Backup System",
@@ -103,9 +113,13 @@ const Projects = () => {
 					size={30}
 				/>
 			</motion.div>
-			<div className="sm:w-[40%] lg:w-[50%] border px-[1em] p-[2em] rounded-md mt-[-5em] w-[95%] text-center text-xs"><ExclamationCircle className="inline" /> Note: All Github Repositories are Private.
-				<br/> For Access mail me at prabhjeetsandhu010@gmail.com<br/>Contact me at +91 9625770491
-			</div>
+			{/* <div className="sm:w-[40%] lg:w-[50%] border px-[1em] p-[2em] rounded-md mt-[-5em] w-[95%] text-center text-xs">
+				<ExclamationCircle className="inline" /> Note: All Github
+				Repositories are Private.
+				<br /> For Access mail me at prabhjeetsandhu010@gmail.com
+				<br />
+				Contact me at +91 9625770491
+			</div> */}
 
 			<motion.div
 				className="product-multiple-card-container"
