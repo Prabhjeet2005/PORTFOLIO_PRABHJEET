@@ -13,25 +13,25 @@ const Projects = () => {
 
 	const projects = [
 		{
-			heading: "Ai Dual Device Proctor",
-			image: "./images/prep-master-ai-client.vercel.app_.png",
+			heading: "Ai Dual Device Proctor Engine",
+			image: "./images/proctor.png",
 			live: "https://prep-master-ai-client.vercel.app/",
 			github: "https://github.com/Prabhjeet2005/PrepMasterAi",
 		},
 		{
-			image: "./images/fullstack_pern.png",
+			image: "./images/travel.png",
+			heading: "Journeaze",
+			github: "https://github.com/Prabhjeet2005/Travel-Booking-App",
+			live: "https://travel-booking-app-client.vercel.app/",
+		},
+		{
+			image: "./images/backup.png",
 			heading: "Backup System",
 			github:
 				"https://github.com/Prabhjeet2005/Fullstack-Backup-Management-System-PERN",
 			live: "https://fullstack-backup-management-system-flame.vercel.app/",
 		},
-		{
-			image:
-				"./images/20250723_0037_Animated Travel Website_simple_compose_01k0srevbve7qv2ndxk9s05dnj.png",
-			heading: "Journeaze",
-			github: "https://github.com/Prabhjeet2005/Travel-Booking-App",
-			live: "https://travel-booking-app-client.vercel.app/",
-		},
+		
 		{
 			image:
 				"./images/20250723_0050_Animated Trading Website_simple_compose_01k0ss76m1e2yv6bkajkgjg1nd.png",
