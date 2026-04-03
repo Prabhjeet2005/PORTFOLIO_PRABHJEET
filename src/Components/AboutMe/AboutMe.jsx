@@ -17,7 +17,7 @@ const AboutMe = () => {
 					transition={{ duration: 0.8, ease: "easeOut" }}>
 					<motion.img
 						className="profile-pic w-full object-cover"
-						src="./images/profile.jpg"
+						src="./images/profile1.jpg"
 						alt="Prabhjeet Singh Sandhu"
 						animate={{ y: [0, -15, 0] }}
 						transition={{
