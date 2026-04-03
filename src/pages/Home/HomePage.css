@@ -268,10 +268,10 @@ a {
 
 @media (min-width: 1028px) {
 	.home-container-outer {
-		flex-direction: row !important;
+
 		padding: 0 150px;
 		gap: 10%;
-		padding-top: 126px;
+		padding-top: 28px;
 	}
 	/* .profile-pic {
 		height: 90vh;

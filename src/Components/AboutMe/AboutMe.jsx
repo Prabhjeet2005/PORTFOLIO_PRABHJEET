@@ -16,7 +16,7 @@ const AboutMe = () => {
 					animate={{ opacity: 1, scale: 1 }}
 					transition={{ duration: 0.8, ease: "easeOut" }}>
 					<motion.img
-						className="profile-pic w-full object-cover"
+						className="profile-pic w-72 h-72 rounded-full object-cover border-4 border-transparent shadow-lg"
 						src="./images/profile1.jpg"
 						alt="Prabhjeet Singh Sandhu"
 						animate={{ y: [0, -15, 0] }}
@@ -72,23 +72,34 @@ const AboutMe = () => {
 						transition={{ duration: 0.8, delay: 0.3 }}
 						viewport={{ once: true }}>
 						<p>
-							I am pursuing B.Tech in Computer Science & Engineering at
-							Guru Gobind Singh Indraprastha University, with a 9.5/10 GPA.
+							I am a 6th-semester Computer Science undergrad at GGSIPU (9.5
+							CGPA), specializing in{" "}
+							<strong>scalable backend systems</strong> and{" "}
+							<strong>full-stack architecture</strong>.
+							<br />
+							<br />I thrive on competitive programming and complex
+							problem-solving. I hold a peak{" "}
+							<strong>LeetCode rating of 1933 (Knight)</strong>—ranking
+							globally at 158—and recently ranked in the{" "}
+							<strong>
+								Top 1,500 nationwide in Google's The Big Code 2026
+							</strong>
+							, passing 100% of test cases in Round 2.
 							<br />
 							<br />
-							My core expertise encompasses the MERN stack and fundamental
-							CS concepts like DBMS, OOP, DSA, and Computer Networks.{" "}
+							Professionally, I have interned at{" "}
+							<strong>Tech Mahindra</strong> and {" "}
+							<strong>Delhi Police</strong>, where I engineered optimized
+							Node.js data pipelines that reduced server memory consumption
+							by 90% and developed multi-threaded Python extraction
+							architectures.
 							<br />
-							I am also passionate about AI/ML and Data Science,
-							continually expanding my skills in these areas.
 							<br />
-							<br />
-							Till date, I have earned certifications in IBM Data Science,
-							GeeksforGeeks Full Stack Development, and Meta DBMS, and
-							solved over 500+ DSA problems across LeetCode, GFG, and
-							Coding Ninjas. <br />I am seeking software engineering
-							internships where I can contribute, learn, and grow in a
-							challenging environment.
+							Equipped with deep expertise in{" "}
+							<strong>C++, the MERN stack, Docker, and SQL</strong>, I am
+							actively seeking software engineering roles at product-based
+							companies where I can leverage my strong DSA foundation to
+							build high-impact, optimized software.
 						</p>
 					</motion.section>
 
